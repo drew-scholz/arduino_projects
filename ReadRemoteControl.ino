@@ -1,11 +1,10 @@
 /*
- * an Arduino program that recognizes (these) transmissions 
- * and prints the address and command bytes, in hexadecimal,
- * to the serial monitor, one line per pair. 
- * When a repeat code is received,
- * it should print the string REPEAT on its own line.
- * 
+ * an Arduino program that recognizes IR remote transmissions 
+ *   - measures the timing of the address and command code sequence against their complement  
+ *   - prints the code sequence in hexadecimal to the serial monitor
+ *   - filters repeat codes
  */
+
 #define IR_INPUT 8
 #define FALSE 0
 #define CMD_SEQ 1
