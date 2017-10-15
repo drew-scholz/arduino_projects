@@ -1,3 +1,9 @@
+/* 
+ * This program will create a reverse lookup table for an Arduino photoresistor by:
+ *   - Finding the averaged settling time for the min and max LED values
+ *   - Storing the photoresitor reading at each LED value into a reverse lookup table
+ */
+
 #define LED_MIN 0
 #define LED_HALF 128
 #define LED_MAX 255
@@ -27,20 +33,16 @@ void loop() {
   /* delay for 3 seconds */
   delay(3000);
 
-  /* Step 1: Serial Plotter, adjust NUM_AVG for testing */
+  /* adjust NUM_AVG for testing */
   //findAvg();
   
-  /* Step 2: */
-  findSettlingTime();
-  
-  /* Step 3: */
+  findSettlingTime();  
+
   findPhotoMinMax(); 
   
-  /* Step 4,5,6: */
   fillAra();
   linearGuessLoop();
-
-  /* Step 7: */ 
+  
   testLoop();
 }
 
